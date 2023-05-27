@@ -1,3 +1,14 @@
 #btnNextVBox{
     -fx-padding :60px;
 }
+
+#btnNext{
+    -fx-background-color: rgb(221, 207, 3);
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+    -fx-text-fill: black;
+    -fx-font-family: "Mali";
+    -fx-font-size: 20px;
+    -fx-min-width: 200px;
+    -fx-min-height: 50px;
+}
