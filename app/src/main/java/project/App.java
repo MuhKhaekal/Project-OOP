@@ -4,9 +4,11 @@ import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 public class App extends Application {
@@ -28,6 +30,9 @@ public class App extends Application {
         Button btnNext = new Button("NEXT");
         btnNext.setId("btnNext");
         btnNext.getStyleClass().add("btnNext");
+        btnNext.setOnAction(action -> {
+            showScene2();
+        });
 
         VBox vBox = new VBox(btnNext);
         vBox.setId("btnNextVBox");
@@ -38,6 +43,32 @@ public class App extends Application {
         Scene scene = new Scene(pane, 400, 600);
         scene.getStylesheets().add(getClass().getResource("/style/style.css").toExternalForm());
         return scene;
+    }
+
+    public Scene showScene2() {
+        Label label = new Label("Select Menu");
+        label.setFont(Font.font("Mali", 20));
+
+        Button countryList = new Button("Country List");
+        countryList.setId("btnCountryList");
+
+        Button listSports = new Button("List Of Sports");
+        listSports.setId("btnListSports");
+
+        Button finalStandings = new Button("Final Standings");
+        finalStandings.setId("btnFinalStandings");
+
+        VBox vBox = new VBox(label, countryList, listSports, finalStandings);
+        vBox.setAlignment(Pos.TOP_CENTER);
+        vBox.setSpacing(15);
+
+        StackPane pane = new StackPane(vBox);
+
+        Scene scene2 = new Scene(pane, 400, 600);
+        scene2.getStylesheets().add(getClass().getResource("/style/style.css").toExternalForm());
+        stage.setScene(scene2);
+        return scene2;
+
     }
 
     public static void main(String[] args) {
