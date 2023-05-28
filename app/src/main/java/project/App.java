@@ -26,10 +26,11 @@ public class App extends Application {
     public Scene showScene1() {
         ImageView imageView = new ImageView("./image/bgScene1.png");
         imageView.setPreserveRatio(false);
+        imageView.setFitHeight(600);
+        imageView.setFitWidth(400);
 
         Button btnNext = new Button("NEXT");
         btnNext.setId("btnNext");
-        btnNext.getStyleClass().add("btnNext");
         btnNext.setOnAction(action -> {
             showScene2();
         });
