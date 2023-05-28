@@ -47,8 +47,13 @@ public class App extends Application {
     }
 
     public Scene showScene2() {
-        Label label = new Label("Select Menu");
-        label.setFont(Font.font("Mali", 20));
+        ImageView imageView = new ImageView("./image/bgScene2.png");
+        imageView.setPreserveRatio(false);
+        imageView.setFitHeight(600);
+        imageView.setFitWidth(400);
+
+        Label selectMenu = new Label("SELECT MENU");
+        selectMenu.setId("lSelectMenu");
 
         Button countryList = new Button("Country List");
         countryList.setId("btnCountryList");
@@ -59,11 +64,12 @@ public class App extends Application {
         Button finalStandings = new Button("Final Standings");
         finalStandings.setId("btnFinalStandings");
 
-        VBox vBox = new VBox(label, countryList, listSports, finalStandings);
-        vBox.setAlignment(Pos.TOP_CENTER);
+        VBox vBox = new VBox(selectMenu, countryList, listSports, finalStandings);
+        vBox.setAlignment(Pos.BASELINE_CENTER);
+        vBox.setId("vBoxScene1");
         vBox.setSpacing(15);
 
-        StackPane pane = new StackPane(vBox);
+        StackPane pane = new StackPane(imageView,vBox);
 
         Scene scene2 = new Scene(pane, 400, 600);
         scene2.getStylesheets().add(getClass().getResource("/style/style.css").toExternalForm());
