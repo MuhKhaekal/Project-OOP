@@ -55,16 +55,22 @@ public class App extends Application {
         Label selectMenu = new Label("SELECT MENU");
         selectMenu.setId("lSelectMenu");
 
-        Button countryList = new Button("Country List");
-        countryList.setId("btnCountryList");
+        Button participatingCountries = new Button("Patricipating Countries");
+        participatingCountries.getStyleClass().add("btnScene2");
 
-        Button listSports = new Button("List Of Sports");
-        listSports.setId("btnListSports");
+        Button sports = new Button("Sports");
+        sports.getStyleClass().add("btnScene2");
+
+        Button calendar = new Button("Calendar");
+        calendar.getStyleClass().add("btnScene2");
 
         Button finalStandings = new Button("Final Standings");
-        finalStandings.setId("btnFinalStandings");
+        finalStandings.getStyleClass().add("btnScene2");
+        
+        Button documentation = new Button("Doucmentation");
+        documentation.getStyleClass().add("btnScene2");
 
-        VBox vBox = new VBox(selectMenu, countryList, listSports, finalStandings);
+        VBox vBox = new VBox(selectMenu, participatingCountries, sports, calendar, finalStandings,documentation);
         vBox.setAlignment(Pos.BASELINE_CENTER);
         vBox.setId("vBoxScene1");
         vBox.setSpacing(15);
