@@ -1,15 +1,11 @@
 package project;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 
 import javafx.application.Application;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
@@ -29,8 +25,9 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import project.datasource.CountryDataSource;
+import project.datasource.SportDataSource;
 import project.models.Country;
-import project.models.Medals;
+import project.models.SportsAndVenue;
 
 public class App extends Application {
     private Stage stage;
@@ -84,8 +81,11 @@ public class App extends Application {
             stage.setScene(partcipatingCountries());
         });
 
-        Button btnSports = new Button("Sports");
+        Button btnSports = new Button("Sports & Venue");
         btnSports.getStyleClass().add("btnScene2");
+        btnSports.setOnAction(c -> {
+            stage.setScene(sportsScene());
+        });
 
         Button btnCalendar = new Button("Calendar");
         btnCalendar.getStyleClass().add("btnScene2");
@@ -171,12 +171,43 @@ public class App extends Application {
         return scene;
     }
 
-    public Scene finalStandings() {
+    public Scene sportsScene(){
+        ObservableList<SportsAndVenue> sportsAndVenues = FXCollections.observableArrayList();
+        sportsAndVenues.addAll(SportDataSource.getSportsAndVenuesData());
+        TableView<SportsAndVenue> tableView = new TableView<>();
+
+        TableColumn<SportsAndVenue, String> column1 = new TableColumn<>("City");
+        column1.getStyleClass().add("column");
+        column1.setCellValueFactory(new PropertyValueFactory<>("city"));
+        column1.setMaxWidth(133);
+        column1.setMinWidth(133);
+
+        TableColumn<SportsAndVenue, String> column2 = new TableColumn<>("Venue");
+        column2.setCellValueFactory(new PropertyValueFactory<>("venue"));
+        column2.getStyleClass().add("column");
+        column2.setMaxWidth(133);
+        column2.setMinWidth(133);
+
+        TableColumn<SportsAndVenue, String> column3 = new TableColumn<>("Event");
+        column3.setCellValueFactory(new PropertyValueFactory<>("event"));
+        column3.getStyleClass().add("column");
+        column3.setMaxWidth(134);
+        column3.setMinWidth(134);
+
+        tableView.getColumns().addAll(column1, column2, column3);
+        tableView.setItems(sportsAndVenues);
+
+        VBox vBox = new VBox(tableView);
+        StackPane pane = new StackPane(vBox);
+        Scene scene = new Scene(pane, 400, 600);
+        return scene;
+    }
+        
+    public Scene finalStandings(){
         ImageView imageView = new ImageView("./image/bgFinalStandings.png");
         imageView.setPreserveRatio(false);
         imageView.setFitHeight(600);
         imageView.setFitWidth(400);
-
         Label lfinalStandings = new Label("Final Standings");
         lfinalStandings.setId("lFinalStandings");
         String[] st = { "Brunei Darussalam", "Cambodia (Host)",
@@ -200,8 +231,7 @@ public class App extends Application {
             int silverMedals = Integer.parseInt(tfSilver.getText());
             int bronzeMedals = Integer.parseInt(tfBronze.getText());
 
-            // Perbarui medali negara
-            updateMedals(selectedCountry, goldMedals, silverMedals, bronzeMedals);
+             updateMedals(selectedCountry, goldMedals, silverMedals, bronzeMedals);
 
             // Tampilkan perbaruan klasemen
             updateStandings();
