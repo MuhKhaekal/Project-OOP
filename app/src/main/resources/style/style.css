@@ -1,8 +1,8 @@
-#btnNextVBox{
-    -fx-padding :60px;
+#btnNextVBox {
+    -fx-padding: 60px;
 }
 
-#btnNext{
+#btnNext {
     -fx-background-color: #ffb300;
     -fx-background-radius: 10px;
     -fx-border-radius: 10px;
@@ -13,14 +13,14 @@
     -fx-min-height: 40px;
 }
 
-#lSelectMenu{
-    -fx-padding: 24px,0px,0px,0px;
+#lSelectMenu {
+    -fx-padding: 24px, 0px, 0px, 0px;
     -fx-font-size: 30px;
     -fx-text-fill: #0b0b45;
     -fx-font-family: "Arial Black";
 }
 
-.btnScene2{
+.btnScene2 {
     -fx-background-color: #0b0b45;
     -fx-background-radius: 15px;
     -fx-border-width: 3px;
@@ -33,13 +33,13 @@
     -fx-min-height: 50px
 }
 
-#lParticipatingCountries{
-    -fx-padding: 24px; 
+#lParticipatingCountries {
+    -fx-padding: 24px;
     -fx-font-family: "Arial Black";
     -fx-font-size: 20px;
     -fx-text-fill: #ffb300
-
 }
+
 /* Label{
     -fx-font-family: "Segoe UI Emoji";
     -fx-text-fill: #ffb300;
@@ -49,7 +49,7 @@
     -fx-background-color: transparent;
 } */
 
-.column{
+.column {
     -fx-text-fill: White;
     -fx-font-family: "Arial Black";
     -fx-alignment: center;
@@ -57,7 +57,7 @@
 
 .table-view {
     -fx-background-color: transparent;
-   
+
 }
 
 .table-view .column-header .label {
@@ -75,8 +75,32 @@
     -fx-background-insets: 0;
 }
 
-#vboxParticipatingCountries2{
+#vboxParticipatingCountries2 {
     -fx-padding: 24px
 }
 
+#lFinalStandings {
+    -fx-padding: 24px;
+    -fx-font-family: "Arial Black";
+    -fx-font-size: 20px;
+    -fx-text-fill: #ffb300
+}
 
+#btnAddMedali-Clear {
+    -fx-background-color: #ffb300;
+    -fx-background-radius: 10px;
+    -fx-border-width: 3px;
+    -fx-border-color: #ba1523;
+    -fx-border-radius: 5px;
+    -fx-text-fill: #0b0b45;
+    -fx-font-family: "Arial Black";
+    -fx-font-size: 13px;
+    -fx-min-width: 100px;
+    -fx-min-height: 32px;
+}
+
+#country-medals {
+    -fx-font-family: "Arial Black";
+    -fx-text-fill: #ffffff;
+    -fx-font-fill: #ffffff;
+}

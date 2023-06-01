@@ -80,7 +80,7 @@ public class App extends Application {
 
         Button btnParticipatingCountries = new Button("Patricipating Countries");
         btnParticipatingCountries.getStyleClass().add("btnScene2");
-        btnParticipatingCountries.setOnAction(a->{
+        btnParticipatingCountries.setOnAction(a -> {
             stage.setScene(partcipatingCountries());
         });
 
@@ -92,19 +92,20 @@ public class App extends Application {
 
         Button btnFinalStandings = new Button("Final Standings");
         btnFinalStandings.getStyleClass().add("btnScene2");
-        btnFinalStandings.setOnAction(c->{
+        btnFinalStandings.setOnAction(c -> {
             stage.setScene(finalStandings());
         });
-        
-        Button  btnDocumentation = new Button("Documentation");
+
+        Button btnDocumentation = new Button("Documentation");
         btnDocumentation.getStyleClass().add("btnScene2");
 
-        VBox vBox = new VBox(selectMenu, btnParticipatingCountries, btnSports, btnCalendar, btnFinalStandings, btnDocumentation);
+        VBox vBox = new VBox(selectMenu, btnParticipatingCountries, btnSports, btnCalendar, btnFinalStandings,
+                btnDocumentation);
         vBox.setAlignment(Pos.BASELINE_CENTER);
         vBox.setId("vBoxScene1");
         vBox.setSpacing(15);
 
-        StackPane pane = new StackPane(imageView,vBox);
+        StackPane pane = new StackPane(imageView, vBox);
 
         Scene scene2 = new Scene(pane, 400, 600);
         scene2.getStylesheets().add(getClass().getResource("/style/style.css").toExternalForm());
@@ -112,7 +113,7 @@ public class App extends Application {
         return scene2;
     }
 
-    public Scene partcipatingCountries(){
+    public Scene partcipatingCountries() {
         ImageView imageView = new ImageView("./image/bgParticipatingCountries.png");
         imageView.setPreserveRatio(false);
         imageView.setFitHeight(600);
@@ -124,13 +125,13 @@ public class App extends Application {
         ObservableList<Country> country = FXCollections.observableArrayList();
         country.addAll(CountryDataSource.getCountryData());
         TableView<Country> tableView = new TableView<>();
-        
+
         TableColumn<Country, String> column1 = new TableColumn<>("Countries");
         column1.getStyleClass().add("column");
         column1.setCellValueFactory(new PropertyValueFactory<>("name"));
         column1.setMaxWidth(133);
         column1.setMinWidth(133);
-        
+
         TableColumn<Country, String> column2 = new TableColumn<>("Sports");
         column2.setCellValueFactory(new PropertyValueFactory<>("sport"));
         column2.getStyleClass().add("column");
@@ -142,39 +143,45 @@ public class App extends Application {
         column3.getStyleClass().add("column");
         column3.setMaxWidth(134);
         column3.setMinWidth(134);
-        
-        tableView.getColumns().addAll(column1,column2,column3);
+
+        tableView.getColumns().addAll(column1, column2, column3);
         tableView.setItems(country);
-        
+
         Button btnBackToHome = new Button("Back To Home");
         btnBackToHome.getStyleClass().add("btnScene2");
-        btnBackToHome.setOnAction(b->{
+        btnBackToHome.setOnAction(b -> {
             stage.setScene(showScene2());
         });
 
         tableView.setFixedCellSize(33);
         tableView.getStyleClass().add("table-view");
-       
-        VBox vbox = new VBox(lParticipatingCountries,tableView);
+
+        VBox vbox = new VBox(lParticipatingCountries, tableView);
         vbox.setId("vboxParticipatingCountries");
         vbox.setAlignment(Pos.TOP_CENTER);
 
         VBox vbox2 = new VBox(btnBackToHome);
         vbox2.setId("vboxParticipatingCountries2");
         vbox2.setAlignment(Pos.BOTTOM_CENTER);
-        
-        StackPane pane = new StackPane(imageView,vbox ,vbox2);
+
+        StackPane pane = new StackPane(imageView, vbox, vbox2);
         Scene scene = new Scene(pane, 400, 600);
- 
+
         scene.getStylesheets().add(getClass().getResource("/style/style.css").toExternalForm());
         return scene;
     }
 
-    public Scene finalStandings(){
+    public Scene finalStandings() {
+        ImageView imageView = new ImageView("./image/bgFinalStandings.png");
+        imageView.setPreserveRatio(false);
+        imageView.setFitHeight(600);
+        imageView.setFitWidth(400);
+
         Label lfinalStandings = new Label("Final Standings");
-        String[] st = {"Brunei Darussalam", "Cambodia (Host)", 
-        "East Timor", "Indonesian","Laos","Malaysia","Myanmar",
-        "Philippines","Singapore","Thailand", "Vietnam"};
+        lfinalStandings.setId("lFinalStandings");
+        String[] st = { "Brunei Darussalam", "Cambodia (Host)",
+                "East Timor", "Indonesian", "Laos", "Malaysia", "Myanmar",
+                "Philippines", "Singapore", "Thailand", "Vietnam" };
 
         Label lSelectCountry = new Label("Select Country");
         ChoiceBox<String> choiceBox = new ChoiceBox<>(FXCollections.observableArrayList(st));
@@ -184,21 +191,23 @@ public class App extends Application {
         TextField tfSilver = new TextField();
         Label lBronze = new Label("Bronze");
         TextField tfBronze = new TextField();
-        
+
         Button addButton = new Button("Tambahkan Medali");
-        addButton.setOnAction(event->{
+        addButton.setId("btnAddMedali-Clear");
+        addButton.setOnAction(event -> {
             String selectedCountry = choiceBox.getValue();
             int goldMedals = Integer.parseInt(tfGold.getText());
             int silverMedals = Integer.parseInt(tfSilver.getText());
             int bronzeMedals = Integer.parseInt(tfBronze.getText());
 
-             // Perbarui medali negara
-             updateMedals(selectedCountry, goldMedals, silverMedals, bronzeMedals);
+            // Perbarui medali negara
+            updateMedals(selectedCountry, goldMedals, silverMedals, bronzeMedals);
 
-             // Tampilkan perbaruan klasemen
-             updateStandings();
+            // Tampilkan perbaruan klasemen
+            updateStandings();
         });
         Button clear = new Button("Clear");
+        clear.setId("btnAddMedali-Clear");
         clear.setOnAction(event -> {
             String selectedCountry = choiceBox.getValue();
             tfGold.setText("");
@@ -210,36 +219,38 @@ public class App extends Application {
         });
 
         Button btnBackToMenu = new Button("Back to Menu");
-        btnBackToMenu.setOnAction(c->{
+        btnBackToMenu.getStyleClass().add("btnScene2");
+        btnBackToMenu.setOnAction(c -> {
             stage.setScene(showScene2());
         });
 
         standingsListView = new ListView<>();
         standingsListView.setPrefWidth(200);
         standingsListView.setId("s");
-        
+
         HBox hBox = new HBox(new Label("Country : "), choiceBox);
-        
+        hBox.setId("country-medals");
         VBox vBoxGold = new VBox(new Label("Gold :"), tfGold);
+        vBoxGold.setId("country-medals");
         VBox vBoxSilver = new VBox(new Label("Silver :"), tfSilver);
+        vBoxSilver.setId("country-medals");
         VBox vBoxBronze = new VBox(new Label("Bronze :"), tfBronze);
-       
-        HBox hBoxMedals = new HBox(vBoxGold, vBoxSilver,vBoxBronze);
+        vBoxBronze.setId("country-medals");
+        HBox hBoxMedals = new HBox(vBoxGold, vBoxSilver, vBoxBronze);
         hBoxMedals.setSpacing(10);
-        
-        HBox hBoxButton = new HBox(addButton,clear);
+
+        HBox hBoxButton = new HBox(addButton, clear);
         hBoxButton.setAlignment(Pos.CENTER);
         hBoxButton.setSpacing(10);
-        VBox vBox = new VBox(lfinalStandings,hBox,hBoxMedals,hBoxButton,
-        standingsListView,btnBackToMenu);
-        
+        VBox vBox = new VBox(lfinalStandings, hBox, hBoxMedals, hBoxButton, standingsListView, btnBackToMenu);
         vBox.setSpacing(10);
         vBox.setPadding(new Insets(10));
         vBox.setAlignment(Pos.CENTER);
 
-        StackPane pane = new StackPane(vBox);
-        
+        StackPane pane = new StackPane(imageView, vBox);
+
         Scene scene = new Scene(pane, 400, 600);
+        scene.getStylesheets().add(getClass().getResource("/style/style.css").toExternalForm());
         return scene;
     }
 
@@ -267,6 +278,7 @@ public class App extends Application {
         }
         standingsListView.setItems(FXCollections.observableArrayList(standings));
     }
+
     private static class Medals implements Comparable<Medals> {
         private int gold;
         private int silver;
