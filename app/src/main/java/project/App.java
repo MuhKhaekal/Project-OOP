@@ -192,7 +192,7 @@ public class App extends Application {
         Label lBronze = new Label("Bronze");
         TextField tfBronze = new TextField();
 
-        Button addButton = new Button("Tambahkan Medali");
+        Button addButton = new Button("Add Medals");
         addButton.setId("btnAddMedali-Clear");
         addButton.setOnAction(event -> {
             String selectedCountry = choiceBox.getValue();
