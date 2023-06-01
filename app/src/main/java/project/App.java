@@ -132,14 +132,14 @@ public class App extends Application {
         column1.setMaxWidth(133);
         column1.setMinWidth(133);
 
-        TableColumn<Country, String> column2 = new TableColumn<>("Sports");
-        column2.setCellValueFactory(new PropertyValueFactory<>("sport"));
+        TableColumn<Country, String> column2 = new TableColumn<>("Athletes");
+        column2.setCellValueFactory(new PropertyValueFactory<>("atlet"));
         column2.getStyleClass().add("column");
         column2.setMaxWidth(133);
         column2.setMinWidth(133);
 
-        TableColumn<Country, String> column3 = new TableColumn<>("Athletes");
-        column3.setCellValueFactory(new PropertyValueFactory<>("atlet"));
+        TableColumn<Country, String> column3 = new TableColumn<>("Featured Sport");
+        column3.setCellValueFactory(new PropertyValueFactory<>("sport"));
         column3.getStyleClass().add("column");
         column3.setMaxWidth(134);
         column3.setMinWidth(134);
