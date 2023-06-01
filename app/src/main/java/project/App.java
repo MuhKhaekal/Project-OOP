@@ -147,9 +147,9 @@ public class App extends Application {
         tableView.getColumns().addAll(column1, column2, column3);
         tableView.setItems(country);
 
-        Button btnBackToHome = new Button("Back To Home");
-        btnBackToHome.getStyleClass().add("btnScene2");
-        btnBackToHome.setOnAction(b -> {
+        Button btnBackToMenu = new Button("Back to Menu");
+        btnBackToMenu.getStyleClass().add("btnScene2");
+        btnBackToMenu.setOnAction(b -> {
             stage.setScene(showScene2());
         });
 
@@ -160,7 +160,7 @@ public class App extends Application {
         vbox.setId("vboxParticipatingCountries");
         vbox.setAlignment(Pos.TOP_CENTER);
 
-        VBox vbox2 = new VBox(btnBackToHome);
+        VBox vbox2 = new VBox(btnBackToMenu);
         vbox2.setId("vboxParticipatingCountries2");
         vbox2.setAlignment(Pos.BOTTOM_CENTER);
 
