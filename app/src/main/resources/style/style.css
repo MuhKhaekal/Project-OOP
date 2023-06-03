@@ -40,15 +40,6 @@
     -fx-text-fill: #ffb300
 }
 
-/* Label{
-    -fx-font-family: "Segoe UI Emoji";
-    -fx-text-fill: #ffb300;
-} */
-
-/* .column{
-    -fx-background-color: transparent;
-} */
-
 .column {
     -fx-text-fill: White;
     -fx-font-family: "Arial Black";
@@ -57,7 +48,6 @@
 
 .table-view {
     -fx-background-color: transparent;
-
 }
 
 .table-view .column-header .label {
@@ -103,4 +93,8 @@
     -fx-font-family: "Arial Black";
     -fx-text-fill: #ffffff;
     -fx-font-fill: #ffffff;
+}
+
+.lDescription{
+    -fx-text-fill: #ffffff;
 }
