@@ -99,8 +99,26 @@
     -fx-min-height: 32px;
 }
 
-#country-medals {
+.documentation {
+    -fx-padding: 10px;
     -fx-font-family: "Arial Black";
-    -fx-text-fill: #ffffff;
-    -fx-font-fill: #ffffff;
+    -fx-font-size: 20px;
+    -fx-text-fill: #ffb300
+}
+
+.BGdocumentation {
+    -fx-background-color: #0b0b45;
+}
+
+.btnNextDocumentation {
+    -fx-background-color: #ffb300;
+    -fx-background-radius: 15px;
+    -fx-border-width: 3px;
+    -fx-border-color: #ba1523;
+    -fx-border-radius: 10px;
+    -fx-text-fill: #0b0b45;
+    -fx-font-family: "Arial Black";
+    -fx-font-size: 20px;
+    -fx-min-width: 200px;
+    -fx-min-height: 50px
 }
