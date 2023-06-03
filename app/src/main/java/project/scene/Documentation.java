@@ -12,11 +12,11 @@ import javafx.stage.Stage;
 public class Documentation {
     private Stage stage;
 
-    public Documentation (Stage stage){
-    this.stage = stage;
+    public Documentation(Stage stage) {
+        this.stage = stage;
     }
 
-    public void show(){
+    public void show() {
         Label label = new Label("Documentation");
         label.getStyleClass().add("documentation");
 
@@ -31,12 +31,13 @@ public class Documentation {
         imageView2.setFitWidth(300);
 
         Button btnNext = new Button("Next");
-        btnNext.getStylesheets().add("btnNextDocumentation");
+        btnNext.getStyleClass().add("btnNextDocumentation");
         btnNext.setOnAction(c -> {
             stage.setScene(documentation2());
         });
 
         Button btnBackToMenu = new Button("Back to Menu");
+        btnBackToMenu.getStyleClass().add("btnScene2");
         btnBackToMenu.setOnAction(c -> {
             MenuScene menuScene = new MenuScene(stage);
             menuScene.show();
@@ -58,7 +59,7 @@ public class Documentation {
     public Scene documentation2() {
         Label label = new Label("Documentation");
         label.getStyleClass().add("documentation");
-        
+
         ImageView imageView1 = new ImageView("./image/openingCeremony3.jpg");
         imageView1.setPreserveRatio(false);
         imageView1.setFitHeight(200);
@@ -70,7 +71,7 @@ public class Documentation {
         imageView2.setFitWidth(300);
 
         Button btnNext = new Button("Next");
-        btnNext.getStylesheets().add("btnNextDocumentation");
+        btnNext.getStyleClass().add("btnNextDocumentation");
         btnNext.setOnAction(c -> {
             stage.setScene(documentation3());
         });
@@ -110,7 +111,7 @@ public class Documentation {
         imageView2.setFitWidth(300);
 
         Button btnNext = new Button("Next");
-        btnNext.getStylesheets().add("btnNextDocumentation");
+        btnNext.getStyleClass().add("btnNextDocumentation");
         btnNext.setOnAction(c -> {
             stage.setScene(documentation4());
         });
@@ -137,7 +138,7 @@ public class Documentation {
     public Scene documentation4() {
         Label label = new Label("Documentation");
         label.getStyleClass().add("documentation");
-        
+
         ImageView imageView1 = new ImageView("./image/voliPutra.jpg");
         imageView1.setPreserveRatio(false);
         imageView1.setFitHeight(200);
@@ -149,7 +150,7 @@ public class Documentation {
         imageView2.setFitWidth(300);
 
         Button btnNext = new Button("Next");
-        btnNext.getStylesheets().add("btnNextDocumentation");
+        btnNext.getStyleClass().add("btnNextDocumentation");
         btnNext.setOnAction(c -> {
             stage.setScene(documentation5());
         });
@@ -188,7 +189,7 @@ public class Documentation {
         imageView2.setFitWidth(300);
 
         Button btnNext = new Button("Next");
-        btnNext.getStylesheets().add("btnNextDocumentation");
+        btnNext.getStyleClass().add("btnNextDocumentation");
         btnNext.setOnAction(c -> {
             stage.setScene(documentation6());
         });
@@ -227,7 +228,7 @@ public class Documentation {
         imageView2.setFitWidth(300);
 
         Button btnNext = new Button("Next");
-        btnNext.getStylesheets().add("btnNextDocumentation");
+        btnNext.getStyleClass().add("btnNextDocumentation");
         btnNext.setOnAction(c -> {
             stage.setScene(documentation7());
         });
@@ -266,7 +267,7 @@ public class Documentation {
         imageView2.setFitWidth(300);
 
         Button btnNext = new Button("Next");
-        btnNext.getStylesheets().add("btnNextDocumentation");
+        btnNext.getStyleClass().add("btnNextDocumentation");
         btnNext.setOnAction(c -> {
             stage.setScene(documentation8());
         });
@@ -304,10 +305,50 @@ public class Documentation {
         imageView2.setFitHeight(200);
         imageView2.setFitWidth(300);
 
+        Button btnNext = new Button("Next");
+        btnNext.getStyleClass().add("btnNextDocumentation");
+        btnNext.setOnAction(c -> {
+            stage.setScene(documentation9());
+        });
+
         Button btnBack = new Button("Back");
         btnBack.getStyleClass().add("btnScene2");
         btnBack.setOnAction(c -> {
             stage.setScene(documentation7());
+        });
+
+        VBox vBox = new VBox(label, imageView1, imageView2, btnNext, btnBack);
+        vBox.setSpacing(10);
+        vBox.setAlignment(Pos.TOP_CENTER);
+
+        StackPane pane = new StackPane(vBox);
+        pane.getStyleClass().add("BGdocumentation");
+
+        Scene scene = new Scene(pane, 400, 600);
+        scene.getStylesheets().add(getClass().getResource("/style/style.css").toExternalForm());
+        stage.setScene(scene);
+        stage.show();
+        return scene;
+    }
+
+    public Scene documentation9() {
+        Label label = new Label("Documentation");
+        label.getStyleClass().add("documentation");
+
+        ImageView imageView1 = new ImageView("./image/closingCeremony1.jpg");
+        imageView1.setPreserveRatio(false);
+        imageView1.setFitHeight(200);
+        imageView1.setFitWidth(300);
+
+        ImageView imageView2 = new ImageView("./image/closingCeremony2.jpg");
+        imageView2.setPreserveRatio(false);
+        imageView2.setFitHeight(200);
+        imageView2.setFitWidth(300);
+
+        Button btnBack = new Button("Back");
+        btnBack.getStyleClass().add("btnScene2");
+        btnBack.setOnAction(c -> {
+            stage.setScene(documentation8());
         });
 
         VBox vBox = new VBox(label, imageView1, imageView2, btnBack);
@@ -323,5 +364,4 @@ public class Documentation {
         stage.show();
         return scene;
     }
-
 }

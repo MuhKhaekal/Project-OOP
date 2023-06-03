@@ -92,11 +92,11 @@
 .documentation {
     -fx-padding: 10px;
     -fx-font-family: "Arial Black";
-    -fx-text-fill: #ffffff;
-    -fx-font-fill: #ffffff;
+    -fx-font-size: 20px;
+    -fx-text-fill: #ffb300
 }
 
-.lDescription{
+.lDescription {
     -fx-text-fill: #ffffff;
     -fx-font-size: 20px;
     -fx-text-fill: #ffb300
