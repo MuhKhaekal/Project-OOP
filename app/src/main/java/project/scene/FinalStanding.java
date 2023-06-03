@@ -25,12 +25,12 @@ public class FinalStanding {
     private Stage stage;
     private Map<String, Medals> countryMedals = new HashMap<>();
     private ListView<String> standingsListView;
-    
-    public FinalStanding(Stage stage){
+
+    public FinalStanding(Stage stage) {
         this.stage = stage;
     }
 
-    public void show(){
+    public void show() {
         ImageView imageView = new ImageView("./image/bgFinalStandings.png");
         imageView.setPreserveRatio(false);
         imageView.setFitHeight(600);
@@ -43,12 +43,16 @@ public class FinalStanding {
 
         Label lSelectCountry = new Label("Select Country");
         ChoiceBox<String> choiceBox = new ChoiceBox<>(FXCollections.observableArrayList(st));
+        choiceBox.getStyleClass().add("boxCountry-addMedals");
         Label lGold = new Label("Gold");
         TextField tfGold = new TextField();
+        tfGold.getStyleClass().add("boxCountry-addMedals");
         Label lSilver = new Label("Silver");
         TextField tfSilver = new TextField();
+        tfSilver.getStyleClass().add("boxCountry-addMedals");
         Label lBronze = new Label("Bronze");
         TextField tfBronze = new TextField();
+        tfBronze.getStyleClass().add("boxCountry-addMedals");
 
         Button addButton = new Button("Add Medals");
         addButton.setId("btnAddMedali-Clear");
@@ -87,13 +91,13 @@ public class FinalStanding {
         standingsListView.setId("s");
 
         HBox hBox = new HBox(new Label("Country : "), choiceBox);
-        hBox.setId("country-medals");
+        hBox.getStyleClass().add("medals-country");
         VBox vBoxGold = new VBox(new Label("Gold :"), tfGold);
-        vBoxGold.setId("country-medals");
+        vBoxGold.getStyleClass().add("medals-country");
         VBox vBoxSilver = new VBox(new Label("Silver :"), tfSilver);
-        vBoxSilver.setId("country-medals");
+        vBoxSilver.getStyleClass().add("medals-country");
         VBox vBoxBronze = new VBox(new Label("Bronze :"), tfBronze);
-        vBoxBronze.setId("country-medals");
+        vBoxBronze.getStyleClass().add("medals-country");
         HBox hBoxMedals = new HBox(vBoxGold, vBoxSilver, vBoxBronze);
         hBoxMedals.setSpacing(10);
 
@@ -118,6 +122,7 @@ public class FinalStanding {
         medals.addMedals(gold, silver, bronze);
         countryMedals.put(country, medals);
     }
+
     private void updateMedalsClear(String country, int gold, int silver, int bronze) {
         Medals medals = countryMedals.getOrDefault(country, new Medals());
         // medals.addMedals(0, 0, 0);
@@ -126,7 +131,9 @@ public class FinalStanding {
     }
 
     private void updateStandings() {
-        List<Map.Entry<String, Medals>> sortedList = new ArrayList<>(countryMedals.entrySet()); // Urutkan negara berdasarkan medali yang didapatkan
+        List<Map.Entry<String, Medals>> sortedList = new ArrayList<>(countryMedals.entrySet()); // Urutkan negara
+                                                                                                // berdasarkan medali
+                                                                                                // yang didapatkan
         sortedList.sort((entry1, entry2) -> entry2.getValue().compareTo(entry1.getValue()));
 
         List<String> standings = new ArrayList<>(); // Tampilkan urutan klasemen
@@ -159,7 +166,8 @@ public class FinalStanding {
                 return Integer.compare(this.silver, other.silver);
             }
 
-            return Integer.compare(this.bronze, other.bronze); // Jika medali perak sama, bandingkan berdasarkan medali perunggu
+            return Integer.compare(this.bronze, other.bronze); // Jika medali perak sama, bandingkan berdasarkan medali
+                                                               // perunggu
         }
 
         @Override

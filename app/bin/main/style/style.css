@@ -76,6 +76,17 @@
     -fx-text-fill: #ffb300
 }
 
+.medals-country Label {
+    -fx-font-family: "Arial Black";
+    -fx-text-fill: #ffffff
+}
+
+.boxCountry-addMedals {
+    -fx-background-color: rgba(255, 255, 255, 0.154);
+    -fx-text-fill: #ffffff;
+    -fx-font-family: "Arial Black";
+}
+
 #btnAddMedali-Clear {
     -fx-background-color: #ffb300;
     -fx-background-radius: 10px;
