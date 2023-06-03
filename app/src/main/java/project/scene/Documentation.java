@@ -18,6 +18,7 @@ public class Documentation {
 
     public void show(){
         Label label = new Label("Documentation");
+        label.getStyleClass().add("documentation");
 
         ImageView imageView1 = new ImageView("./image/openingCeremony1.jpg");
         imageView1.setPreserveRatio(false);
@@ -30,12 +31,12 @@ public class Documentation {
         imageView2.setFitWidth(300);
 
         Button btnNext = new Button("Next");
+        btnNext.getStylesheets().add("btnNextDocumentation");
         btnNext.setOnAction(c -> {
             stage.setScene(documentation2());
         });
 
         Button btnBackToMenu = new Button("Back to Menu");
-        // btnBackToMenu.getStyleClass().add("btnScene2");
         btnBackToMenu.setOnAction(c -> {
             MenuScene menuScene = new MenuScene(stage);
             menuScene.show();
@@ -46,6 +47,7 @@ public class Documentation {
         vBox.setAlignment(Pos.TOP_CENTER);
 
         StackPane pane = new StackPane(vBox);
+        pane.getStyleClass().add("BGdocumentation");
 
         Scene scene = new Scene(pane, 400, 600);
         scene.getStylesheets().add(getClass().getResource("/style/style.css").toExternalForm());
@@ -55,7 +57,8 @@ public class Documentation {
 
     public Scene documentation2() {
         Label label = new Label("Documentation");
-
+        label.getStyleClass().add("documentation");
+        
         ImageView imageView1 = new ImageView("./image/openingCeremony3.jpg");
         imageView1.setPreserveRatio(false);
         imageView1.setFitHeight(200);
@@ -67,12 +70,13 @@ public class Documentation {
         imageView2.setFitWidth(300);
 
         Button btnNext = new Button("Next");
+        btnNext.getStylesheets().add("btnNextDocumentation");
         btnNext.setOnAction(c -> {
             stage.setScene(documentation3());
         });
 
         Button btnBack = new Button("Back");
-        // btnBack.getStyleClass().add("btnScene2");
+        btnBack.getStyleClass().add("btnScene2");
         btnBack.setOnAction(c -> {
             Documentation documentation = new Documentation(stage);
             documentation.show();
@@ -83,6 +87,7 @@ public class Documentation {
         vBox.setAlignment(Pos.TOP_CENTER);
 
         StackPane pane = new StackPane(vBox);
+        pane.getStyleClass().add("BGdocumentation");
 
         Scene scene = new Scene(pane, 400, 600);
         scene.getStylesheets().add(getClass().getResource("/style/style.css").toExternalForm());
@@ -92,6 +97,7 @@ public class Documentation {
 
     public Scene documentation3() {
         Label label = new Label("Documentation");
+        label.getStyleClass().add("documentation");
 
         ImageView imageView1 = new ImageView("./image/sepakBola1.jpg");
         imageView1.setPreserveRatio(false);
@@ -104,12 +110,13 @@ public class Documentation {
         imageView2.setFitWidth(300);
 
         Button btnNext = new Button("Next");
+        btnNext.getStylesheets().add("btnNextDocumentation");
         btnNext.setOnAction(c -> {
             stage.setScene(documentation4());
         });
 
         Button btnBack = new Button("Back");
-        // btnBack.getStyleClass().add("btnScene2");
+        btnBack.getStyleClass().add("btnScene2");
         btnBack.setOnAction(c -> {
             stage.setScene(documentation2());
         });
@@ -119,6 +126,7 @@ public class Documentation {
         vBox.setAlignment(Pos.TOP_CENTER);
 
         StackPane pane = new StackPane(vBox);
+        pane.getStyleClass().add("BGdocumentation");
 
         Scene scene = new Scene(pane, 400, 600);
         scene.getStylesheets().add(getClass().getResource("/style/style.css").toExternalForm());
@@ -128,7 +136,8 @@ public class Documentation {
 
     public Scene documentation4() {
         Label label = new Label("Documentation");
-
+        label.getStyleClass().add("documentation");
+        
         ImageView imageView1 = new ImageView("./image/voliPutra.jpg");
         imageView1.setPreserveRatio(false);
         imageView1.setFitHeight(200);
@@ -140,12 +149,13 @@ public class Documentation {
         imageView2.setFitWidth(300);
 
         Button btnNext = new Button("Next");
+        btnNext.getStylesheets().add("btnNextDocumentation");
         btnNext.setOnAction(c -> {
             stage.setScene(documentation5());
         });
 
         Button btnBack = new Button("Back");
-        // btnBack.getStyleClass().add("btnScene2");
+        btnBack.getStyleClass().add("btnScene2");
         btnBack.setOnAction(c -> {
             stage.setScene(documentation3());
         });
@@ -155,6 +165,7 @@ public class Documentation {
         vBox.setAlignment(Pos.TOP_CENTER);
 
         StackPane pane = new StackPane(vBox);
+        pane.getStyleClass().add("BGdocumentation");
 
         Scene scene = new Scene(pane, 400, 600);
         scene.getStylesheets().add(getClass().getResource("/style/style.css").toExternalForm());
@@ -164,6 +175,7 @@ public class Documentation {
 
     public Scene documentation5() {
         Label label = new Label("Documentation");
+        label.getStyleClass().add("documentation");
 
         ImageView imageView1 = new ImageView("./image/hockey.jpg");
         imageView1.setPreserveRatio(false);
@@ -176,12 +188,13 @@ public class Documentation {
         imageView2.setFitWidth(300);
 
         Button btnNext = new Button("Next");
+        btnNext.getStylesheets().add("btnNextDocumentation");
         btnNext.setOnAction(c -> {
             stage.setScene(documentation6());
         });
 
         Button btnBack = new Button("Back");
-        // btnBack.getStyleClass().add("btnScene2");
+        btnBack.getStyleClass().add("btnScene2");
         btnBack.setOnAction(c -> {
             stage.setScene(documentation4());
         });
@@ -191,6 +204,7 @@ public class Documentation {
         vBox.setAlignment(Pos.TOP_CENTER);
 
         StackPane pane = new StackPane(vBox);
+        pane.getStyleClass().add("BGdocumentation");
 
         Scene scene = new Scene(pane, 400, 600);
         scene.getStylesheets().add(getClass().getResource("/style/style.css").toExternalForm());
@@ -200,6 +214,7 @@ public class Documentation {
 
     public Scene documentation6() {
         Label label = new Label("Documentation");
+        label.getStyleClass().add("documentation");
 
         ImageView imageView1 = new ImageView("./image/lompat.jpg");
         imageView1.setPreserveRatio(false);
@@ -212,12 +227,13 @@ public class Documentation {
         imageView2.setFitWidth(300);
 
         Button btnNext = new Button("Next");
+        btnNext.getStylesheets().add("btnNextDocumentation");
         btnNext.setOnAction(c -> {
             stage.setScene(documentation7());
         });
 
         Button btnBack = new Button("Back");
-        // btnBack.getStyleClass().add("btnScene2");
+        btnBack.getStyleClass().add("btnScene2");
         btnBack.setOnAction(c -> {
             stage.setScene(documentation5());
         });
@@ -227,6 +243,7 @@ public class Documentation {
         vBox.setAlignment(Pos.TOP_CENTER);
 
         StackPane pane = new StackPane(vBox);
+        pane.getStyleClass().add("BGdocumentation");
 
         Scene scene = new Scene(pane, 400, 600);
         scene.getStylesheets().add(getClass().getResource("/style/style.css").toExternalForm());
@@ -236,6 +253,7 @@ public class Documentation {
 
     public Scene documentation7() {
         Label label = new Label("Documentation");
+        label.getStyleClass().add("documentation");
 
         ImageView imageView1 = new ImageView("./image/renang.jpg");
         imageView1.setPreserveRatio(false);
@@ -248,12 +266,13 @@ public class Documentation {
         imageView2.setFitWidth(300);
 
         Button btnNext = new Button("Next");
+        btnNext.getStylesheets().add("btnNextDocumentation");
         btnNext.setOnAction(c -> {
             stage.setScene(documentation8());
         });
 
         Button btnBack = new Button("Back");
-        // btnBack.getStyleClass().add("btnScene2");
+        btnBack.getStyleClass().add("btnScene2");
         btnBack.setOnAction(c -> {
             stage.setScene(documentation6());
         });
@@ -263,6 +282,7 @@ public class Documentation {
         vBox.setAlignment(Pos.TOP_CENTER);
 
         StackPane pane = new StackPane(vBox);
+        pane.getStyleClass().add("BGdocumentation");
 
         Scene scene = new Scene(pane, 400, 600);
         scene.getStylesheets().add(getClass().getResource("/style/style.css").toExternalForm());
@@ -272,6 +292,7 @@ public class Documentation {
 
     public Scene documentation8() {
         Label label = new Label("Documentation");
+        label.getStyleClass().add("documentation");
 
         ImageView imageView1 = new ImageView("./image/tenis.jpg");
         imageView1.setPreserveRatio(false);
@@ -284,7 +305,7 @@ public class Documentation {
         imageView2.setFitWidth(300);
 
         Button btnBack = new Button("Back");
-        // btnBack.getStyleClass().add("btnScene2");
+        btnBack.getStyleClass().add("btnScene2");
         btnBack.setOnAction(c -> {
             stage.setScene(documentation7());
         });
@@ -294,6 +315,7 @@ public class Documentation {
         vBox.setAlignment(Pos.TOP_CENTER);
 
         StackPane pane = new StackPane(vBox);
+        pane.getStyleClass().add("BGdocumentation");
 
         Scene scene = new Scene(pane, 400, 600);
         scene.getStylesheets().add(getClass().getResource("/style/style.css").toExternalForm());

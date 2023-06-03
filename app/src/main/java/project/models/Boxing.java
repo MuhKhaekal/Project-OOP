@@ -9,12 +9,12 @@ public class Boxing extends Sport{
     }
     @Override
     public String showDescription() {
-        String text = "Billiards at the 2023 SEA Games will be competed at Nagaworld Aeon 2 Sen Sok, Phnom Penh. Athletes compete for carom, pool and snooker medals.";
+        String text = "Southeast Asian boxers at this year's SEA Games competed at mini-flyweight, flyweight, bantamweight, featherweight, lightweight, light welterweight, welterweight, light middleweight, light heavyweight, cruiserweight and heavyweight."; 
         return text;
     }
     @Override
     public String venue() {
-        String venue = "Phnom Penh. AEON Mall Sen Sok City";
+        String venue = "Phnom Penh. Morodok Techo Sports Complex (Badminton Hall, Elephant Hall 1)\nChroy Changvar Convention Centre (Hall G)";
         return venue;
     }
 }
