@@ -1,10 +1,9 @@
 package project.models;
 
 public class Athletics extends Sport{
-    private String name;
     @Override
-    public String name(String name) {
-        this.name = name;
+    public String name() {
+        String name = "Athletics";
         return name;
     }
     @Override

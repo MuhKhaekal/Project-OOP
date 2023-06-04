@@ -1,10 +1,8 @@
 package project.models;
 
 public class Weightlifting extends Sport {
-    private String name;
-    @Override
-    public String name(String name) {
-        this.name = name;
+    public String name() {
+        String name = "Weightlifting";
         return name;
     }
     @Override
@@ -14,7 +12,7 @@ public class Weightlifting extends Sport {
     }
     @Override
     public String venue() {
-        String venue = "Phnom Penh. Chroy Changvar Convention Centre (Hall F)";
+        String venue = "Phnom Penh. Chroy Changvar Convention Center (Hall F)";
         return venue;
     }
 }
