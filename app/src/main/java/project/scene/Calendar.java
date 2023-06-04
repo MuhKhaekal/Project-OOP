@@ -82,6 +82,7 @@ public class Calendar {
         new Activity("Wushu","May 9th to 12th")
         );
         Label label = new Label ("Schedule");
+        label.setId("lSchedule");
         TableView<Activity> tableView = new TableView<>();
 
         TableColumn<Activity, String> activityColumn = new TableColumn<>("Activity");

@@ -38,7 +38,7 @@ public class MenuScene {
         sports.show();
     });
 
-    Button btnCalendar = new Button("Calendar");
+    Button btnCalendar = new Button("Schedule");
     btnCalendar.getStyleClass().add("btnScene2");
     btnCalendar.setOnAction(c->{
         Calendar calendar = new Calendar(stage);
