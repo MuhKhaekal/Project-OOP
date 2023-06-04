@@ -5,6 +5,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -37,13 +38,16 @@ public class Documentation {
         });
 
         Button btnBackToMenu = new Button("Back to Menu");
-        btnBackToMenu.getStyleClass().add("btnScene2");
+        btnBackToMenu.getStyleClass().add("btnBack");
         btnBackToMenu.setOnAction(c -> {
             MenuScene menuScene = new MenuScene(stage);
             menuScene.show();
         });
 
-        VBox vBox = new VBox(label, imageView1, imageView2, btnNext, btnBackToMenu);
+        HBox hBox = new HBox(btnBackToMenu, btnNext);
+        hBox.setAlignment(Pos.BOTTOM_CENTER);
+        hBox.setSpacing(10);
+        VBox vBox = new VBox(label, imageView1, imageView2, hBox);
         vBox.setSpacing(10);
         vBox.setAlignment(Pos.TOP_CENTER);
 
@@ -77,13 +81,23 @@ public class Documentation {
         });
 
         Button btnBack = new Button("Back");
-        btnBack.getStyleClass().add("btnScene2");
+        btnBack.getStyleClass().add("btnBack");
         btnBack.setOnAction(c -> {
             Documentation documentation = new Documentation(stage);
             documentation.show();
         });
 
-        VBox vBox = new VBox(label, imageView1, imageView2, btnNext, btnBack);
+        Button btnBackToMenu = new Button("Back to Menu");
+        btnBackToMenu.getStyleClass().add("btnBack");
+        btnBackToMenu.setOnAction(c -> {
+            MenuScene menuScene = new MenuScene(stage);
+            menuScene.show();
+        });
+
+        HBox hBox = new HBox(btnBack, btnNext);
+        hBox.setAlignment(Pos.CENTER);
+        hBox.setSpacing(10);
+        VBox vBox = new VBox(label, imageView1, imageView2, hBox, btnBackToMenu);
         vBox.setSpacing(10);
         vBox.setAlignment(Pos.TOP_CENTER);
 
@@ -117,12 +131,22 @@ public class Documentation {
         });
 
         Button btnBack = new Button("Back");
-        btnBack.getStyleClass().add("btnScene2");
+        btnBack.getStyleClass().add("btnBack");
         btnBack.setOnAction(c -> {
             stage.setScene(documentation2());
         });
 
-        VBox vBox = new VBox(label, imageView1, imageView2, btnNext, btnBack);
+        Button btnBackToMenu = new Button("Back to Menu");
+        btnBackToMenu.getStyleClass().add("btnBack");
+        btnBackToMenu.setOnAction(c -> {
+            MenuScene menuScene = new MenuScene(stage);
+            menuScene.show();
+        });
+
+        HBox hBox = new HBox(btnBack, btnNext);
+        hBox.setAlignment(Pos.CENTER);
+        hBox.setSpacing(10);
+        VBox vBox = new VBox(label, imageView1, imageView2, hBox, btnBackToMenu);
         vBox.setSpacing(10);
         vBox.setAlignment(Pos.TOP_CENTER);
 
@@ -156,12 +180,22 @@ public class Documentation {
         });
 
         Button btnBack = new Button("Back");
-        btnBack.getStyleClass().add("btnScene2");
+        btnBack.getStyleClass().add("btnBack");
         btnBack.setOnAction(c -> {
             stage.setScene(documentation3());
         });
 
-        VBox vBox = new VBox(label, imageView1, imageView2, btnNext, btnBack);
+        Button btnBackToMenu = new Button("Back to Menu");
+        btnBackToMenu.getStyleClass().add("btnBack");
+        btnBackToMenu.setOnAction(c -> {
+            MenuScene menuScene = new MenuScene(stage);
+            menuScene.show();
+        });
+
+        HBox hBox = new HBox(btnBack, btnNext);
+        hBox.setAlignment(Pos.CENTER);
+        hBox.setSpacing(10);
+        VBox vBox = new VBox(label, imageView1, imageView2, hBox, btnBackToMenu);
         vBox.setSpacing(10);
         vBox.setAlignment(Pos.TOP_CENTER);
 
@@ -195,12 +229,22 @@ public class Documentation {
         });
 
         Button btnBack = new Button("Back");
-        btnBack.getStyleClass().add("btnScene2");
+        btnBack.getStyleClass().add("btnBack");
         btnBack.setOnAction(c -> {
             stage.setScene(documentation4());
         });
 
-        VBox vBox = new VBox(label, imageView1, imageView2, btnNext, btnBack);
+        Button btnBackToMenu = new Button("Back to Menu");
+        btnBackToMenu.getStyleClass().add("btnBack");
+        btnBackToMenu.setOnAction(c -> {
+            MenuScene menuScene = new MenuScene(stage);
+            menuScene.show();
+        });
+
+        HBox hBox = new HBox(btnBack, btnNext);
+        hBox.setAlignment(Pos.CENTER);
+        hBox.setSpacing(10);
+        VBox vBox = new VBox(label, imageView1, imageView2, hBox, btnBackToMenu);
         vBox.setSpacing(10);
         vBox.setAlignment(Pos.TOP_CENTER);
 
@@ -234,12 +278,22 @@ public class Documentation {
         });
 
         Button btnBack = new Button("Back");
-        btnBack.getStyleClass().add("btnScene2");
+        btnBack.getStyleClass().add("btnBack");
         btnBack.setOnAction(c -> {
             stage.setScene(documentation5());
         });
 
-        VBox vBox = new VBox(label, imageView1, imageView2, btnNext, btnBack);
+        Button btnBackToMenu = new Button("Back to Menu");
+        btnBackToMenu.getStyleClass().add("btnBack");
+        btnBackToMenu.setOnAction(c -> {
+            MenuScene menuScene = new MenuScene(stage);
+            menuScene.show();
+        });
+
+        HBox hBox = new HBox(btnBack, btnNext);
+        hBox.setAlignment(Pos.CENTER);
+        hBox.setSpacing(10);
+        VBox vBox = new VBox(label, imageView1, imageView2, hBox, btnBackToMenu);
         vBox.setSpacing(10);
         vBox.setAlignment(Pos.TOP_CENTER);
 
@@ -273,12 +327,22 @@ public class Documentation {
         });
 
         Button btnBack = new Button("Back");
-        btnBack.getStyleClass().add("btnScene2");
+        btnBack.getStyleClass().add("btnBack");
         btnBack.setOnAction(c -> {
             stage.setScene(documentation6());
         });
 
-        VBox vBox = new VBox(label, imageView1, imageView2, btnNext, btnBack);
+        Button btnBackToMenu = new Button("Back to Menu");
+        btnBackToMenu.getStyleClass().add("btnBack");
+        btnBackToMenu.setOnAction(c -> {
+            MenuScene menuScene = new MenuScene(stage);
+            menuScene.show();
+        });
+
+        HBox hBox = new HBox(btnBack, btnNext);
+        hBox.setAlignment(Pos.CENTER);
+        hBox.setSpacing(10);
+        VBox vBox = new VBox(label, imageView1, imageView2, hBox, btnBackToMenu);
         vBox.setSpacing(10);
         vBox.setAlignment(Pos.TOP_CENTER);
 
@@ -312,14 +376,24 @@ public class Documentation {
         });
 
         Button btnBack = new Button("Back");
-        btnBack.getStyleClass().add("btnScene2");
+        btnBack.getStyleClass().add("btnBack");
         btnBack.setOnAction(c -> {
             stage.setScene(documentation7());
         });
 
-        VBox vBox = new VBox(label, imageView1, imageView2, btnNext, btnBack);
+        Button btnBackToMenu = new Button("Back to Menu");
+        btnBackToMenu.getStyleClass().add("btnBack");
+        btnBackToMenu.setOnAction(c -> {
+            MenuScene menuScene = new MenuScene(stage);
+            menuScene.show();
+        });
+
+        HBox hBox = new HBox(btnBack, btnNext);
+        hBox.setAlignment(Pos.CENTER);
+        hBox.setSpacing(10);
+        VBox vBox = new VBox(label, imageView1, imageView2, hBox, btnBackToMenu);
         vBox.setSpacing(10);
-        vBox.setAlignment(Pos.TOP_CENTER);
+        vBox.setAlignment(Pos.TOP_CENTER);;
 
         StackPane pane = new StackPane(vBox);
         pane.getStyleClass().add("BGdocumentation");
@@ -346,12 +420,22 @@ public class Documentation {
         imageView2.setFitWidth(300);
 
         Button btnBack = new Button("Back");
-        btnBack.getStyleClass().add("btnScene2");
+        btnBack.getStyleClass().add("btnBack");
         btnBack.setOnAction(c -> {
             stage.setScene(documentation8());
         });
 
-        VBox vBox = new VBox(label, imageView1, imageView2, btnBack);
+        Button btnBackToMenu = new Button("Back to Menu");
+        btnBackToMenu.getStyleClass().add("btnBack");
+        btnBackToMenu.setOnAction(c -> {
+            MenuScene menuScene = new MenuScene(stage);
+            menuScene.show();
+        });
+
+        HBox hBox = new HBox(btnBack, btnBackToMenu);
+        hBox.setAlignment(Pos.CENTER);
+        hBox.setSpacing(10);
+        VBox vBox = new VBox(label, imageView1, imageView2, hBox, btnBackToMenu);
         vBox.setSpacing(10);
         vBox.setAlignment(Pos.TOP_CENTER);
 

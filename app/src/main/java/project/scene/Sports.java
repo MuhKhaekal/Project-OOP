@@ -70,13 +70,24 @@ public class Sports {
         Label lListSports = new Label("List Sports");
         lListSports.getStyleClass().add("ListSports");
         VBox vBoxListSports = new VBox(lListSports);
-        vBoxListSports.setAlignment(Pos.TOP_CENTER);
-        vBoxListSports.setPadding(new Insets(14));
+        vBoxListSports.setAlignment(Pos.BOTTOM_CENTER);
         ScrollPane topSide = generateTopSide(scene.getHeight() * 0.4, scene.getWidth());
+        VBox vs = new VBox(topSide);
+        Button btnBackToMenu = new Button("Back to Menu");
+        VBox vBoxBackToMenu = new VBox(btnBackToMenu);
+        vBoxBackToMenu.setAlignment(Pos.BOTTOM_CENTER);
+        btnBackToMenu.getStyleClass().add("btnBackToMenuSports");
+        btnBackToMenu.setOnAction(v -> {
+            MenuScene menuScene = new MenuScene(stage);
+            menuScene.show();
+        });
+        vs.setMinSize(400, 200);
+        vs.setMaxSize(400, 200);
+        vs.getStyleClass().add("vBoxVs");
         bottomSide = generateBottomSide(scene.getHeight() * 0.6, scene.getWidth());
         changeMenu(1);
 
-        root.getChildren().addAll(vBoxListSports, topSide, bottomSide);
+        root.getChildren().addAll(vBoxListSports, vs, bottomSide,vBoxBackToMenu);
         root.getStyleClass().add("bgSport");
 
         stage.setScene(scene);
@@ -98,15 +109,9 @@ public class Sports {
         Text tDescription = new Text(sport.showDescription());
         tDescription.getStyleClass().add("tSports");
         TextFlow textFlow = new TextFlow(tDescription);
-        Button btnBackToMenu = new Button("Back to Menu");
-        btnBackToMenu.getStyleClass().add("btnScene2");
-        btnBackToMenu.setOnAction(v -> {
-            MenuScene menuScene = new MenuScene(stage);
-            menuScene.show();
-        });
-        VBox vBoxMenuScene = new VBox(btnBackToMenu);
-        vBoxMenuScene.setAlignment(Pos.BOTTOM_CENTER);
-        bottomSide.getChildren().addAll(lname, lvenue, tVenue, lDescription, textFlow, vBoxMenuScene);
+        VBox vBoxName = new VBox(lname);
+        vBoxName.setAlignment(Pos.TOP_CENTER);
+        bottomSide.getChildren().addAll(vBoxName, lvenue, tVenue, lDescription, textFlow);
     }
 
     private void changeMenu(int indexMenu) {
@@ -233,10 +238,10 @@ public class Sports {
 
     private ScrollPane generateTopSide(double width, double height) {
         VBox vBoxLayout = new VBox();
-        vBoxLayout.setPrefSize(width, height);
-        vBoxLayout.setMaxSize(width, height);
+        vBoxLayout.setMinWidth(400);
         vBoxLayout.setAlignment(Pos.TOP_CENTER);
 
+        vBoxLayout.getStyleClass().add("vBoxLayoutSports");
         Region spaceBetween = new Region();
         HBox.setHgrow(spaceBetween, Priority.ALWAYS);
 
@@ -249,8 +254,8 @@ public class Sports {
 
     private VBox generateBottomSide(double width, double height) {
         VBox vboxMenu = new VBox();
-        vboxMenu.setPrefSize(400, 600);
-        vboxMenu.setMaxSize(400, 600);
+        vboxMenu.setMinSize(400, 200);
+        vboxMenu.setMaxSize(400, 200);
         vboxMenu.setPadding(new Insets(12, 24, 24, 8));
         vboxMenu.getStyleClass().add("vbox-menu");
 

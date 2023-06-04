@@ -118,25 +118,52 @@
 }
 
 .btnNextDocumentation {
-    -fx-background-color: #ffb300;
-    -fx-background-radius: 15px;
+    -fx-background-color: #ffb300;;
+    -fx-background-radius: 12px;
     -fx-border-width: 3px;
     -fx-border-color: #ba1523;
-    -fx-border-radius: 10px;
+    -fx-border-radius: 8px;
     -fx-text-fill: #0b0b45;
     -fx-font-family: "Arial Black";
-    -fx-font-size: 20px;
-    -fx-min-width: 200px;
-    -fx-min-height: 50px
+    -fx-font-size: 15px;
+    -fx-min-width: 100px;
+    -fx-min-height: 30px
 }
 
 .btnBacktoMenuCalendar {
     -fx-background-color: #ffb300;
     -fx-background-radius: 10px;
+    -fx-background-radius: 12px;
     -fx-border-width: 3px;
     -fx-border-color: #ba1523;
     -fx-border-radius: 8px;
     -fx-text-fill: #0b0b45;
+    -fx-font-family: "Arial Black";
+    -fx-font-size: 15px;
+    -fx-min-width: 100px;
+    -fx-min-height: 30px
+}
+
+.btnBack{
+    -fx-background-color: #0b0b45;
+    -fx-background-radius: 12px;
+    -fx-border-width: 3px;
+    -fx-border-color: #ba1523;
+    -fx-border-radius: 8px;
+    -fx-text-fill: #ffb300;
+    -fx-font-family: "Arial Black";
+    -fx-font-size: 15px;
+    -fx-min-width: 100px;
+    -fx-min-height: 30px
+}
+
+.btnBacktoMenuCalendar{
+    -fx-background-color: #0b0b45;
+    -fx-background-radius: 10px;
+    -fx-border-width: 3px;
+    -fx-border-color: #ba1523;
+    -fx-border-radius: 8px;
+    -fx-text-fill: #ffb300;
     -fx-font-family: "Arial Black";
     -fx-font-size: 10px;
     -fx-min-width: 120px;
@@ -152,7 +179,7 @@
 #lSchedule {
     -fx-font-family: "Arial Black";
     -fx-font-size: 20px;
-    -fx-text-fill: #ffb300
+    -fx-text-fill: #ffb300;
 }
 
 .bgSport {
@@ -169,8 +196,51 @@
 .lSports {
     -fx-font-family: "Arial Black";
     -fx-text-fill: #ffb300;
+    -fx-font-size:20px;
 }
 
 .tSports {
     -fx-fill: #ffffff;
+}
+
+.list-view {
+    -fx-background-color: #F0F0F0; /* Ubah warna latar belakang */
+}
+
+.list-cell {
+    -fx-text-fill: #333333; /* Ubah warna teks */
+    -fx-font-size: 14px; /* Ubah ukuran font */
+}
+
+.list-cell:selected {
+    -fx-background-color: #007bff; /* Ubah warna latar belakang saat dipilih */
+    -fx-text-fill: white;
+    -fx-font-family: "Arial";
+     /* Ubah warna teks saat dipilih */
+}
+
+.vBoxLayoutSports{
+    -fx-border-width:20px;
+    -fx-background-color: rgba(255, 255, 255, 0.23);
+}
+
+.menu-active {
+	-fx-background-color: #ffb300;
+}
+
+.vBoxVs{
+    -fx-padding:24px;
+}
+
+.btnBackToMenuSports{
+    -fx-background-color: #0b0b45;
+    -fx-background-radius: 12px;
+    -fx-border-width: 3px;
+    -fx-border-color: #ba1523;
+    -fx-border-radius: 8px;
+    -fx-text-fill: #ffb300;
+    -fx-font-family: "Arial Black";
+    -fx-font-size: 15px;
+    -fx-min-width: 100px;
+    -fx-min-height: 30px
 }

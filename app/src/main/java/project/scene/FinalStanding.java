@@ -46,12 +46,15 @@ public class FinalStanding {
         choiceBox.getStyleClass().add("boxCountry-addMedals");
         Label lGold = new Label("Gold");
         TextField tfGold = new TextField();
+        tfGold.setPromptText("Enter Medals");
         tfGold.getStyleClass().add("boxCountry-addMedals");
         Label lSilver = new Label("Silver");
         TextField tfSilver = new TextField();
+        tfSilver.setPromptText("Enter Medals");
         tfSilver.getStyleClass().add("boxCountry-addMedals");
         Label lBronze = new Label("Bronze");
         TextField tfBronze = new TextField();
+        tfBronze.setPromptText("Enter Medals");
         tfBronze.getStyleClass().add("boxCountry-addMedals");
 
         Button addButton = new Button("Add Medals");
@@ -88,7 +91,7 @@ public class FinalStanding {
 
         standingsListView = new ListView<>();
         standingsListView.setPrefWidth(200);
-        standingsListView.setId("s");
+        standingsListView.getStyleClass().add("list-view");
 
         HBox hBox = new HBox(new Label("Country : "), choiceBox);
         hBox.getStyleClass().add("medals-country");
