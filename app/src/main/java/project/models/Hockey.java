@@ -12,7 +12,7 @@ public class Hockey extends Sport {
     }
     @Override
     public String venue() {
-        String venue = "Phnom Penh. Morodok Techo Sports Complex (National Stadium), Chroy Changvar Convention Centre (Dinosaur Park Hall)";
+        String venue = "Phnom Penh. Morodok Techo Sports Complex (National Stadium),\nChroy Changvar Convention Centre (Dinosaur Park Hall)";
         return venue;
     }
 }

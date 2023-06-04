@@ -129,3 +129,22 @@
     -fx-min-width: 200px;
     -fx-min-height: 50px
 }
+
+.btnBacktoMenuCalendar{
+    -fx-background-color: #ffb300;
+    -fx-background-radius: 10px;
+    -fx-border-width: 3px;
+    -fx-border-color: #ba1523;
+    -fx-border-radius: 8px;
+    -fx-text-fill: #0b0b45;
+    -fx-font-family: "Arial Black";
+    -fx-font-size: 10px;
+    -fx-min-width: 120px;
+    -fx-min-height: 30px
+}
+
+.column {
+    -fx-text-fill: White;
+    -fx-font-family: "Arial Black";
+    -fx-alignment: center;
+}

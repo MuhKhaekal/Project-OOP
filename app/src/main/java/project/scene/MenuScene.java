@@ -40,10 +40,10 @@ public class MenuScene {
 
     Button btnCalendar = new Button("Calendar");
     btnCalendar.getStyleClass().add("btnScene2");
-    // btnCalendar.setOnAction(c->{
-    //     Calendar calendar = new Calendar(stage);
-    //     calendar.show();
-    // });
+    btnCalendar.setOnAction(c->{
+        Calendar calendar = new Calendar(stage);
+        calendar.show();
+    });
 
     Button btnFinalStandings = new Button("Final Standings");
     btnFinalStandings.getStyleClass().add("btnScene2");
