@@ -56,18 +56,19 @@ import project.models.Weightlifting;
 import project.models.Wrestling;
 import project.models.Wushu;
 
-public class Sports{
+public class Sports {
     private Stage stage;
     private VBox bottomSide;
 
-    public Sports(Stage stage){
+    public Sports(Stage stage) {
         this.stage = stage;
     }
 
-    public void show(){
+    public void show() {
         VBox root = new VBox();
-        Scene scene = new Scene(root, 400,600);
+        Scene scene = new Scene(root, 400, 600);
         Label lListSports = new Label("List Sports");
+        lListSports.getStyleClass().add("ListSports");
         VBox vBoxListSports = new VBox(lListSports);
         vBoxListSports.setAlignment(Pos.TOP_CENTER);
         vBoxListSports.setPadding(new Insets(14));
@@ -75,29 +76,37 @@ public class Sports{
         bottomSide = generateBottomSide(scene.getHeight() * 0.6, scene.getWidth());
         changeMenu(1);
 
-        root.getChildren().addAll(vBoxListSports,topSide, bottomSide);
+        root.getChildren().addAll(vBoxListSports, topSide, bottomSide);
+        root.getStyleClass().add("bgSport");
 
         stage.setScene(scene);
+        scene.getStylesheets().add(getClass().getResource("/style/style.css").toExternalForm());
         stage.show();
     }
 
-    private void showSport(Sport sport){
+    private void showSport(Sport sport) {
         bottomSide.getChildren().clear();
         // Sport aquatics = new Aquatics();
         Label lname = new Label(sport.name());
+        lname.getStyleClass().add("lSports");
         Label lvenue = new Label("Venue :");
+        lvenue.getStyleClass().add("lSports");
         Text tVenue = new Text(sport.venue());
+        tVenue.getStyleClass().add("tSports");
         Label lDescription = new Label("Description :");
+        lDescription.getStyleClass().add("lSports");
         Text tDescription = new Text(sport.showDescription());
+        tDescription.getStyleClass().add("tSports");
         TextFlow textFlow = new TextFlow(tDescription);
         Button btnBackToMenu = new Button("Back to Menu");
-        btnBackToMenu.setOnAction(v->{
+        btnBackToMenu.getStyleClass().add("btnScene2");
+        btnBackToMenu.setOnAction(v -> {
             MenuScene menuScene = new MenuScene(stage);
             menuScene.show();
         });
         VBox vBoxMenuScene = new VBox(btnBackToMenu);
         vBoxMenuScene.setAlignment(Pos.BOTTOM_CENTER);
-        bottomSide.getChildren().addAll(lname,lvenue,tVenue,lDescription,textFlow,vBoxMenuScene);
+        bottomSide.getChildren().addAll(lname, lvenue, tVenue, lDescription, textFlow, vBoxMenuScene);
     }
 
     private void changeMenu(int indexMenu) {
@@ -217,9 +226,9 @@ public class Sports{
             default:
                 break;
         }
-    if (sport != null){
-        showSport(sport);
-    }
+        if (sport != null) {
+            showSport(sport);
+        }
     }
 
     private ScrollPane generateTopSide(double width, double height) {
@@ -244,49 +253,49 @@ public class Sports{
         vboxMenu.setMaxSize(400, 600);
         vboxMenu.setPadding(new Insets(12, 24, 24, 8));
         vboxMenu.getStyleClass().add("vbox-menu");
-        
+
         return vboxMenu;
     }
 
     private HBox[] generateMenuItem() {
         Sport[] sports = {
-            new Aquatics(),
-            new Athletics(),
-            new Basket(),
-            new Billiard(),
-            new Boxing(),
-            new BuluTangkis(),
-            new Chess(),
-            new Cricket(),
-            new Cycling(),
-            new DanceSport(),
-            new ESport(),
-            new Fencing(),
-            new Floorball(),
-            new Football(),
-            new Golf(),
-            new Gymnastic(),
-            new Hockey(),
-            new Jetski(),
-            new Judo(),
-            new Karate(),
-            new MartialArts(),
-            new ObstacleRace(),
-            new PencakSilat(),
-            new Petanque(),
-            new Sailing(),
-            new SoftTennis(),
-            new TableTennis(),
-            new Taekwondo(),
-            new Takraw(),
-            new Tennis(),
-            new Teqball(),
-            new TraditionalBoatRace(),
-            new Triathlon(),
-            new Volleyball(),
-            new Weightlifting(),
-            new Wrestling(),
-            new Wushu()
+                new Aquatics(),
+                new Athletics(),
+                new Basket(),
+                new Billiard(),
+                new Boxing(),
+                new BuluTangkis(),
+                new Chess(),
+                new Cricket(),
+                new Cycling(),
+                new DanceSport(),
+                new ESport(),
+                new Fencing(),
+                new Floorball(),
+                new Football(),
+                new Golf(),
+                new Gymnastic(),
+                new Hockey(),
+                new Jetski(),
+                new Judo(),
+                new Karate(),
+                new MartialArts(),
+                new ObstacleRace(),
+                new PencakSilat(),
+                new Petanque(),
+                new Sailing(),
+                new SoftTennis(),
+                new TableTennis(),
+                new Taekwondo(),
+                new Takraw(),
+                new Tennis(),
+                new Teqball(),
+                new TraditionalBoatRace(),
+                new Triathlon(),
+                new Volleyball(),
+                new Weightlifting(),
+                new Wrestling(),
+                new Wushu()
         };
         HBox[] listHboxMenu = new HBox[sports.length];
 

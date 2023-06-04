@@ -130,7 +130,7 @@
     -fx-min-height: 50px
 }
 
-.btnBacktoMenuCalendar{
+.btnBacktoMenuCalendar {
     -fx-background-color: #ffb300;
     -fx-background-radius: 10px;
     -fx-border-width: 3px;
@@ -149,8 +149,28 @@
     -fx-alignment: center;
 }
 
-#lSchedule{
+#lSchedule {
     -fx-font-family: "Arial Black";
     -fx-font-size: 20px;
     -fx-text-fill: #ffb300
+}
+
+.bgSport {
+    -fx-background-color: #0b0b45;
+}
+
+.ListSports {
+    -fx-padding: 24px;
+    -fx-font-family: "Arial Black";
+    -fx-font-size: 20px;
+    -fx-text-fill: #ffb300
+}
+
+.lSports {
+    -fx-font-family: "Arial Black";
+    -fx-text-fill: #ffb300;
+}
+
+.tSports {
+    -fx-fill: #ffffff;
 }
